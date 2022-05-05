@@ -8,8 +8,5 @@ import java.util.ArrayList;
  * @author pavl_g.
  */
 public abstract class UnitTest {
-    private final ArrayList<UnitTest> subClasses = new ArrayList<>();
-    protected void runTest() {
-        subClasses.add(this);
-    }
+    protected abstract void runTest();
 }
