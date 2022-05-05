@@ -14,22 +14,26 @@ test/package-info.java
  test.package-info
 annotations/lifecycle/package-info.java
  annotations.lifecycle.package-info
-test/TestInjector.java
- test.TestInjector
-test/core/UnitTest.java
- test.core.UnitTest
-util/Executor.java
- util.Executor
-test/core/package-info.java
- test.core.package-info
-test/TestLifecycle.java
- test.TestLifecycle
- test.TestLifecycle$1
+annotations/lifecycle/Lifecycle.java
+ annotations.lifecycle.Lifecycle
+ annotations.lifecycle.Lifecycle$ILogger
 annotations/lifecycle/LifecycleImpl.java
  annotations.lifecycle.LifecycleImpl
  annotations.lifecycle.LifecycleImpl$1
 annotations/lifecycle/LifecycleOwner.java
  annotations.lifecycle.LifecycleOwner
-annotations/lifecycle/Lifecycle.java
- annotations.lifecycle.Lifecycle
- annotations.lifecycle.Lifecycle$ILogger
+test/core/package-info.java
+ test.core.package-info
+test/TestInjector.java
+ test.TestInjector
+test/TestLifecycle.java
+ test.TestLifecycle
+ test.TestLifecycle$1
+annotations/accessor/package-info.java
+ annotations.accessor.package-info
+test/core/UnitTest.java
+ test.core.UnitTest
+util/Launcher.java
+ util.Launcher
+util/Executor.java
+ util.Executor

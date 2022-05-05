@@ -7,7 +7,7 @@ import test.core.UnitTest;
 
 import java.util.Arrays;
 
-public class TestInjector implements UnitTest {
+public class TestInjector extends UnitTest {
 
     private final Injector injector;
 
@@ -25,7 +25,8 @@ public class TestInjector implements UnitTest {
     }
 
     @Override
-    public void runTest() {
+    protected void runTest() {
+        super.runTest();
         try {
             final TestInjector testInjector = new TestInjector();
             testInjector.setAction(pointer -> {
