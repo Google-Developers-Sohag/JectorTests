@@ -24,7 +24,6 @@ public class TestLifecycle extends UnitTest {
 
     @Override
     protected void runTest() {
-        super.runTest();
         try {
             final TestLifecycle testLifecycle = new TestLifecycle();
             testLifecycle.setLifecycle(new Lifecycle() {

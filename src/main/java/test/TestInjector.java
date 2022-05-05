@@ -26,7 +26,6 @@ public class TestInjector extends UnitTest {
 
     @Override
     protected void runTest() {
-        super.runTest();
         try {
             final TestInjector testInjector = new TestInjector();
             testInjector.setAction(pointer -> {
