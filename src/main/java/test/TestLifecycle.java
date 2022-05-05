@@ -5,7 +5,7 @@ import annotations.lifecycle.LifecycleImpl;
 import annotations.lifecycle.LifecycleOwner;
 import test.core.UnitTest;
 
-public class TestLifecycle implements UnitTest {
+public class TestLifecycle extends UnitTest {
 
     private final LifecycleOwner lifecycleOwner;
 
@@ -23,7 +23,8 @@ public class TestLifecycle implements UnitTest {
     }
 
     @Override
-    public void runTest() {
+    protected void runTest() {
+        super.runTest();
         try {
             final TestLifecycle testLifecycle = new TestLifecycle();
             testLifecycle.setLifecycle(new Lifecycle() {
