@@ -14,12 +14,12 @@ public class TestLifecycle extends UnitTest {
         this.lifecycleOwner = getClass().getConstructor().getAnnotation(LifecycleOwner.class);
     }
 
-    public void setLifecycle(Lifecycle lifecycle) {
-        lifecycleOwner.value().setLifecycle(lifecycle);
-    }
-
     public Lifecycle getLifecycle() {
         return lifecycleOwner.value().getLifecycle();
+    }
+
+    public void setLifecycle(Lifecycle lifecycle) {
+        lifecycleOwner.value().setLifecycle(lifecycle);
     }
 
     @Override

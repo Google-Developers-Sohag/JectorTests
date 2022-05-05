@@ -1,7 +1,5 @@
 package test.core;
 
-import java.util.ArrayList;
-
 /**
  * For unit testing.
  *
