@@ -22,7 +22,7 @@ jobs:
     strategy:
       matrix:
         java: [ '8', '11', '15' ]
-        os: [ 'ubuntu-latest', 'macos-latest', 'windows-latest' ]
+        os: [ 'ubuntu-latest' ]
         architecture: [ 'x64', 'x86' ]
         distribution: [ 'temurin', 'zulu' ]
     name: build on ${{ matrix.os }}_${{ matrix.architecture }}
@@ -45,7 +45,7 @@ jobs:
       strategy:
         matrix:
           java: [ '8', '11', '15' ]
-          os: [ 'ubuntu-latest', 'macos-latest', 'windows-latest' ]
+          os: [ 'ubuntu-latest' ]
           architecture: [ 'x64', 'x86' ]
           distribution: [ 'temurin', 'zulu' ]
       steps:
