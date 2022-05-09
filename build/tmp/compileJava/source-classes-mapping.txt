@@ -16,11 +16,13 @@ test/core/UnitTest.java
  test.core.UnitTest
 annotations/package-info.java
  annotations.package-info
-util/Executor.java
- util.Executor
+test/core/package-info.java
+ test.core.package-info
 annotations/lifecycle/Lifecycle.java
  annotations.lifecycle.Lifecycle
  annotations.lifecycle.Lifecycle$ILogger
+test/core/test22/TestBlank.java
+ test.core.test22.TestBlank
 test/TestLifecycle.java
  test.TestLifecycle
  test.TestLifecycle$1
@@ -31,9 +33,9 @@ annotations/lifecycle/LifecycleImpl.java
  annotations.lifecycle.LifecycleImpl$1
 annotations/action/Action.java
  annotations.action.Action
-util/Launcher.java
- util.Launcher
-test/core/package-info.java
- test.core.package-info
 util/package-info.java
  util.package-info
+util/Launcher.java
+ util.Launcher
+util/Executor.java
+ util.Executor
