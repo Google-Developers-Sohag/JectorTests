@@ -19,5 +19,5 @@ test {
     useJUnitPlatform()
 }
 application {
-    mainClass = 'util.Launcher'
+    mainClass = 'test.applauncher.Launcher'
 }
