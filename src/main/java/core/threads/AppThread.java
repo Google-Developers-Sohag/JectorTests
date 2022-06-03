@@ -13,9 +13,11 @@ public abstract class AppThread extends Thread {
 
     private final ArrayList<Task> tasks = new ArrayList<>();
     private volatile boolean terminate;
+    private final String name;
 
     public AppThread(String name) {
         super(name);
+        this.name = name;
     }
 
     @Override
@@ -52,6 +54,7 @@ public abstract class AppThread extends Thread {
 
     public void terminate() {
         this.terminate = true;
+        System.out.println("IPBinder: AppThread " + name + " is terminated.");
     }
 
     public boolean isTerminated() {
