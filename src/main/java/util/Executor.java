@@ -63,7 +63,7 @@ public final class Executor {
             clazzName = clazzName.substring(0, clazzName.length() - (".class").length());
             clazzName = package_ + "." + clazzName;
             final Class<?> clazz = Class.forName(clazzName);
-            // invoke only the unit test classes
+            // invoke only the unit testable classes
             try {
                 final Method method = getMethod(clazz, executor.method, params);
                 method.setAccessible(true);
