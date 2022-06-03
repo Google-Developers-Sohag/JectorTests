@@ -40,8 +40,14 @@ public final class IPBinder {
                 continue;
             }
             if (annotation.thread() == Threads.BACKGROUND) {
+                if (workMethods[0] != null) {
+                    throw new IllegalThreadStateException("Your class should have only one background tagged method to do the IPC !");
+                }
                 workMethods[0] = method;
             } else {
+                if (workMethods[1] != null) {
+                    throw new IllegalThreadStateException("Your class should have only one looper tagged method to do the IPC !");
+                }
                 workMethods[1] = method;
             }
         }
