@@ -7,7 +7,7 @@ public abstract class Task implements Runnable {
         return executed;
     }
 
-    public void setExecuted(boolean executed) {
-        this.executed = executed;
+    protected void setExecuted() {
+        this.executed = true;
     }
 }

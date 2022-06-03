@@ -37,14 +37,13 @@ public abstract class AppThread extends Thread {
     }
 
     private synchronized void runTasks() {
-        // to avoid the concurrent modification exception and trigger the run on the next update
-        final ArrayList<Task> safeTasks = new ArrayList<>(tasks);
-        for (Task task : safeTasks) {
-            if (task.isExecuted()) {
+        for (int i = 0; i < tasks.size(); i++) {
+            if (tasks.get(i).isExecuted()) {
+                tasks.remove(tasks.get(i));
                 continue;
             }
-            task.run();
-            task.setExecuted(true);
+            tasks.get(i).run();
+            tasks.get(i).setExecuted();
         }
     }
 
