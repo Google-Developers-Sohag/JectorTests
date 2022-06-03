@@ -19,10 +19,4 @@ public class TestThreads2 implements Work {
     public void start(Object asyncReturn) {
         System.out.println("Using shared data2 " + asyncReturn);
     }
-
-
-    @RunOn(thread = Threads.LOOPER)
-    public void start2(Object asyncReturn) {
-        System.out.println("Using shared data " + asyncReturn);
-    }
 }
