@@ -3,7 +3,7 @@ package test;
 import annotations.lifecycle.Lifecycle;
 import annotations.lifecycle.LifecycleImpl;
 import annotations.lifecycle.LifecycleOwner;
-import test.core.UnitTest;
+import core.testable.UnitTest;
 
 public class TestLifecycle extends UnitTest {
 

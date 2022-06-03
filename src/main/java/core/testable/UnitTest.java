@@ -1,4 +1,4 @@
-package test.core;
+package core.testable;
 
 /**
  * For unit testing.

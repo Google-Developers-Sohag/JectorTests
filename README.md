@@ -1,3 +1,3 @@
 # JectorTests
-A dependency injection test-cases using custom annotations and java interfaces.
+A dependency injection testable-cases using custom annotations and java interfaces.
 

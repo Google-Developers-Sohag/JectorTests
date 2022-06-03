@@ -3,7 +3,7 @@ package test;
 import annotations.action.Action;
 import annotations.action.ActionImpl;
 import annotations.action.Injector;
-import test.core.UnitTest;
+import core.testable.UnitTest;
 
 import java.util.Arrays;
 
