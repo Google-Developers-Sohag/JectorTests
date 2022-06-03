@@ -44,7 +44,7 @@ public abstract class AppThread extends Thread {
                 continue;
             }
             task.run();
-            task.setExecuted(true);
+            task.setExecuted();
         }
     }
 
