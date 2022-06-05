@@ -1,4 +1,4 @@
-package core.threads;
+package core.threads.impl.jvmthreads;
 
 public abstract class Task implements Runnable {
     private volatile boolean executed;
@@ -7,7 +7,7 @@ public abstract class Task implements Runnable {
         return executed;
     }
 
-    protected void setExecuted() {
+    public void setExecuted() {
         this.executed = true;
     }
 }

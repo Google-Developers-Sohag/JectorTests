@@ -1,6 +1,5 @@
-package core.threads.impl;
+package core.threads.impl.jvmthreads;
 
-import core.threads.AppThread;
 import java.util.logging.Logger;
 
 /**

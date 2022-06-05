@@ -1,7 +1,9 @@
-package core.threads.impl;
+package core.threads;
 
-import core.threads.AppThread;
 import core.threads.command.RunOn;
+import core.threads.impl.jvmthreads.AppThread;
+import core.threads.impl.jvmthreads.Daemon;
+import core.threads.impl.jvmthreads.Looper;
 
 /**
  * The types of threads used by {@link RunOn#thread()}.
@@ -11,7 +13,7 @@ import core.threads.command.RunOn;
  * @author pavl_g
  */
 public enum Threads {
-    BACKGROUND(Daemon.class), LOOPER(Looper.class);
+    DAEMON(Daemon.class), LOOPER(Looper.class);
 
     private final Class<? extends AppThread> threadClass;
 
