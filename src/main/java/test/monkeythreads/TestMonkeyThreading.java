@@ -33,8 +33,12 @@ public class TestMonkeyThreading extends SimpleApplication {
     public void simpleInitApp() {
         heavyDutyBinder = MonkeyBinder.createMonkeyIPC(stateManager, "Heavy Duty Stuff");
         heavyDutyBinder.addDaemonWork(new TestMonkeyDaemonBinder());
+        heavyDutyBinder.addDaemonWork(new TestMonkeyDaemonBinder());
+        heavyDutyBinder.addDaemonWork(new TestMonkeyDaemonBinder());
 
         assetLoaderBinder = MonkeyBinder.createMonkeyIPC(stateManager, "Load Assets");
+        assetLoaderBinder.addDaemonWork(new TestMonkeyAssetLoader(this));
+        assetLoaderBinder.addDaemonWork(new TestMonkeyAssetLoader(this));
         assetLoaderBinder.addDaemonWork(new TestMonkeyAssetLoader(this));
 
 

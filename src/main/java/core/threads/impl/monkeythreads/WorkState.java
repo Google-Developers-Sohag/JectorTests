@@ -27,11 +27,4 @@ public class WorkState {
         this.executed = true;
     }
 
-    public AppThread getAppThread() {
-        return appThread;
-    }
-
-    public void setAppThread(AppThread appThread) {
-        this.appThread = appThread;
-    }
 }
