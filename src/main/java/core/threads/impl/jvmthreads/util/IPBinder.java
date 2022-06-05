@@ -1,11 +1,11 @@
-package util;
+package core.threads.impl.jvmthreads.util;
 
-import core.threads.Task;
+import core.threads.impl.jvmthreads.Task;
 import core.threads.Work;
 import core.threads.command.RunOn;
-import core.threads.impl.Daemon;
-import core.threads.impl.Looper;
-import core.threads.impl.Threads;
+import core.threads.impl.jvmthreads.Daemon;
+import core.threads.impl.jvmthreads.Looper;
+import core.threads.Threads;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -39,7 +39,7 @@ public final class IPBinder {
             if (annotation == null) {
                 continue;
             }
-            if (annotation.thread() == Threads.BACKGROUND) {
+            if (annotation.thread() == Threads.DAEMON) {
                 if (workMethods[0] != null) {
                     throw new IllegalThreadStateException("Your class should have only one background tagged method to do the IPC !");
                 }

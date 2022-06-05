@@ -1,30 +1,43 @@
-package core.threads;
+package core.threads.impl.monkeythreads;
 
+import com.jme3.app.Application;
+import com.jme3.app.state.BaseAppState;
+import core.threads.impl.jvmthreads.Task;
 import java.util.ArrayList;
 
-/**
- * Represents the base implementation of an app thread.
- *
- * @author pavl_g
- * @see core.threads.impl.Daemon
- * @see core.threads.impl.Looper
- */
-public abstract class AppThread extends Thread {
+public class MonkeyLooper extends BaseAppState {
 
     private final ArrayList<Task> tasks = new ArrayList<>();
     private volatile boolean terminate;
-    private final String name;
 
-    public AppThread(String name) {
-        super(name);
-        this.name = name;
+    @Override
+    protected void initialize(Application app) {
+
     }
 
     @Override
-    public void run() {
-        while (!isTerminated()){
-            runTasks();
+    protected void cleanup(Application app) {
+
+    }
+
+    @Override
+    protected void onEnable() {
+
+    }
+
+    @Override
+    protected void onDisable() {
+
+    }
+
+    @Override
+    public void update(float tpf) {
+        if (isTerminated()) {
+            // self detachment onTermination
+            getStateManager().detach(this);
+            return;
         }
+        runTasks();
     }
 
     /**
@@ -53,7 +66,6 @@ public abstract class AppThread extends Thread {
 
     public void terminate() {
         this.terminate = true;
-        System.out.println("IPBinder: AppThread " + name + " is terminated.");
     }
 
     public boolean isTerminated() {

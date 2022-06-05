@@ -2,12 +2,12 @@ package test;
 
 import core.threads.Work;
 import core.threads.command.RunOn;
-import core.threads.impl.Threads;
+import core.threads.Threads;
 
 public class TestThreads2 implements Work {
 
     @Override
-    @RunOn(thread = Threads.BACKGROUND)
+    @RunOn(thread = Threads.DAEMON)
     public Object async() {
         String work = "Work 2";
 
