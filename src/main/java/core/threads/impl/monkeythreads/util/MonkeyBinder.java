@@ -1,7 +1,6 @@
 package core.threads.impl.monkeythreads.util;
 
 import com.jme3.app.state.AppStateManager;
-import core.threads.impl.jvmthreads.AppThread;
 import core.threads.impl.jvmthreads.Task;
 import core.threads.Threads;
 import core.threads.Work;
@@ -22,7 +21,6 @@ import core.threads.impl.monkeythreads.WorkState;
 public final class MonkeyBinder extends Thread {
 
     private final Logger logger;
-    private final Daemon daemonThread = new Daemon();
     private final MonkeyLooper looperThread = new MonkeyLooper();
     private final ArrayList<WorkState> works = new ArrayList<>();
     private volatile boolean terminate;
@@ -32,7 +30,6 @@ public final class MonkeyBinder extends Thread {
         logger = Logger.getLogger(processName);
         setName(processName);
 
-        daemonThread.start();
         stateManager.attach(looperThread);
 
         start();
@@ -72,14 +69,11 @@ public final class MonkeyBinder extends Thread {
     public synchronized void addDaemonWork(Work work) {
         final WorkState workState = new WorkState();
         workState.setWork(work);
-        workState.setAppThread(daemonThread);
         works.add(workState);
     }
 
     public void terminate() {
         this.terminate = true;
-
-        daemonThread.terminate();
 
         logger.info("Terminated");
     }
@@ -94,12 +88,12 @@ public final class MonkeyBinder extends Thread {
                 works.remove(works.get(i));
                 continue;
             }
-            executeOnThread(works.get(i).getWork(), works.get(i).getAppThread());
+            executeOnThread(works.get(i).getWork());
             works.get(i).setExecuted();
         }
     }
 
-    private synchronized void executeOnThread(Work work, AppThread thread) {
+    private synchronized void executeOnThread(Work work) {
         final Method[] methods = work.getClass().getDeclaredMethods();
         final Method[] workMethods = new Method[2];
         final Object[] resultStore = new Object[1];
@@ -109,7 +103,7 @@ public final class MonkeyBinder extends Thread {
             if (annotation == null) {
                 continue;
             }
-            if (annotation.thread().getThreadClass() == thread.getClass()) {
+            if (annotation.thread() == Threads.DAEMON) {
                 if (workMethods[0] != null) {
                     throw new IllegalThreadStateException("Your class should have only one background tagged method to do the IPC !");
                 }
@@ -134,7 +128,7 @@ public final class MonkeyBinder extends Thread {
             e.printStackTrace();
         }
         // wait until a data is returned then add a task for the looper thread
-        while (!isUpdated(resultStore[0]) && !daemonThread.isTerminated());
+        while (!isUpdated(resultStore[0]) && !isTerminate());
 
         looperThread.addTask(new Task() {
             @Override
@@ -151,10 +145,6 @@ public final class MonkeyBinder extends Thread {
 
     private boolean isUpdated(Object object) {
         return object != null;
-    }
-
-    public Daemon getDaemonThread() {
-        return daemonThread;
     }
 
     public MonkeyLooper getLooperThread() {

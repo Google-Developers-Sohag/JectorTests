@@ -2,20 +2,18 @@ annotations/action/Injector.java
  annotations.action.Injector
 core/testable/package-info.java
  core.testable.package-info
-core/threads/impl/monkeythreads/MonkeyLooper.java
- core.threads.impl.monkeythreads.MonkeyLooper
+annotations/accessor/package-info.java
+ annotations.accessor.package-info
 annotations/lifecycle/LifecycleOwner.java
  annotations.lifecycle.LifecycleOwner
-core/threads/impl/monkeythreads/WorkState.java
- core.threads.impl.monkeythreads.WorkState
+util/Executor.java
+ util.Executor
 core/threads/impl/jvmthreads/package-info.java
  core.threads.impl.jvmthreads.package-info
 annotations/package-info.java
  annotations.package-info
-core/threads/impl/jvmthreads/util/IPBinder.java
- core.threads.impl.jvmthreads.util.IPBinder
- core.threads.impl.jvmthreads.util.IPBinder$1
- core.threads.impl.jvmthreads.util.IPBinder$2
+annotations/lifecycle/package-info.java
+ annotations.lifecycle.package-info
 annotations/lifecycle/Lifecycle.java
  annotations.lifecycle.Lifecycle
  annotations.lifecycle.Lifecycle$ILogger
@@ -41,36 +39,38 @@ core/threads/Work.java
  core.threads.Work
 test/TestInjector.java
  test.TestInjector
+annotations/action/package-info.java
+ annotations.action.package-info
+annotations/action/ActionImpl.java
+ annotations.action.ActionImpl
+test/monkeythreads/TestMonkeyDaemonBinder.java
+ test.monkeythreads.TestMonkeyDaemonBinder
+core/threads/impl/jvmthreads/AppThread.java
+ core.threads.impl.jvmthreads.AppThread
+core/threads/impl/jvmthreads/Task.java
+ core.threads.impl.jvmthreads.Task
+core/threads/Threads.java
+ core.threads.Threads
+core/threads/impl/monkeythreads/MonkeyLooper.java
+ core.threads.impl.monkeythreads.MonkeyLooper
+test/TestThreads2.java
+ test.TestThreads2
+test/monkeythreads/TestMonkeyAssetLoader.java
+ test.monkeythreads.TestMonkeyAssetLoader
+core/threads/impl/jvmthreads/Daemon.java
+ core.threads.impl.jvmthreads.Daemon
+core/threads/impl/jvmthreads/util/IPBinder.java
+ core.threads.impl.jvmthreads.util.IPBinder
+ core.threads.impl.jvmthreads.util.IPBinder$1
+ core.threads.impl.jvmthreads.util.IPBinder$2
+core/threads/command/RunOn.java
+ core.threads.command.RunOn
+core/threads/impl/jvmthreads/Looper.java
+ core.threads.impl.jvmthreads.Looper
 core/threads/impl/monkeythreads/util/MonkeyBinder.java
  core.threads.impl.monkeythreads.util.MonkeyBinder
  core.threads.impl.monkeythreads.util.MonkeyBinder$1
-annotations/action/ActionImpl.java
- annotations.action.ActionImpl
-annotations/action/package-info.java
- annotations.action.package-info
-annotations/lifecycle/package-info.java
- annotations.lifecycle.package-info
-core/threads/Threads.java
- core.threads.Threads
-core/threads/Task.java
- core.threads.Task
-test/TestThreads2.java
- test.TestThreads2
-core/threads/impl/jvmthreads/Daemon.java
- core.threads.impl.jvmthreads.Daemon
-util/Executor.java
- util.Executor
-core/threads/command/RunOn.java
- core.threads.command.RunOn
-annotations/accessor/package-info.java
- annotations.accessor.package-info
-core/threads/impl/jvmthreads/Looper.java
- core.threads.impl.jvmthreads.Looper
-core/threads/AppThread.java
- core.threads.AppThread
-test/monkeythreads/TestMonkeyDaemonBinder.java
- test.monkeythreads.TestMonkeyDaemonBinder
+core/threads/impl/monkeythreads/WorkState.java
+ core.threads.impl.monkeythreads.WorkState
 test/monkeythreads/TestMonkeyThreading.java
  test.monkeythreads.TestMonkeyThreading
-test/monkeythreads/TestMonkeyAssetLoader.java
- test.monkeythreads.TestMonkeyAssetLoader
